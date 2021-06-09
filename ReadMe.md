@@ -57,6 +57,7 @@ camel.Emit("some undefiend event",12)
 ## listing for Dom Events
 
 ### You can play with dom events and change them with your handlers
+### make sure that you are using the client side version on dist/event_camel.js
 
 ```html
 <!DOCTYPE html>
