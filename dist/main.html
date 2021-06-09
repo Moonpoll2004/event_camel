@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventCamel-browser example</title>
+    <script src="./event_camel.js"></script>
+
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        .main-stage{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap:10px;
+        }
+        #counter{
+            display: flex;
+            width: 400px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: dodgerblue;
+            color:white;
+            height: 400px;
+            font-size: 25px;
+        }
+
+        .btn{
+            outline: none;
+            border:none;
+            padding: 0.7em 1.2em;
+        }
+        #inc-btn{
+            background-color: crimson;
+            color: white;
+        }
+        #dec-btn{
+            background-color: rgb(153, 0, 255);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-stage">
+        <div id="counter">0</div>
+        <div>
+            <div style="display: block; text-align: center;">
+                <button class="btn" id="inc-btn">Increment </button>
+            </div>
+            <br>
+            <div>
+                <button class="btn" id="dec-btn">Decrement</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const camel = new EventCamel()
+        var counter = document.getElementById("counter")
+
+        //get Increment and decremnt buttons
+        var inc_btn = document.getElementById("inc-btn")
+        var dec_btn = document.getElementById("dec-btn")
+
+
+        //setting main events "decremnt" and "increment"
+        camel.On("increment",function(payload){
+            counter.innerText = parseInt(counter.innerText) + payload  
+        })
+
+        camel.On("decrement",function(payload){
+            counter.innerText = parseInt(counter.innerText) - payload
+        })
+
+
+        //buttons listeners
+        inc_btn.addEventListener("click",function(){
+            camel.Emit("increment",1)
+        })
+
+        dec_btn.addEventListener("click",function(){
+            camel.Emit("decrement",1)
+        })
+    </script>
+</body>
+</html>

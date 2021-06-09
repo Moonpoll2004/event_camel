@@ -1,0 +1,12 @@
+{
+  "name": "event_camel",
+  "version": "1.0.0",
+  "description": "simple Event helper library for dealing with events in browser or any javascript enviroment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["event bus","bus","performance","browser","dom"],
+  "author": "Moonpoll2004",
+  "license": "ISC"
+}
