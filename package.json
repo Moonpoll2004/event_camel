@@ -6,7 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["event bus","bus","performance","browser","dom"],
+  "keywords": [
+    "event bus",
+    "bus",
+    "performance",
+    "browser",
+    "dom"
+  ],
   "author": "Moonpoll2004",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moonpoll2004/event_camel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Moonpoll2004/event_camel/issues"
+  },
+  "homepage": "https://github.com/Moonpoll2004/event_camel#readme"
 }

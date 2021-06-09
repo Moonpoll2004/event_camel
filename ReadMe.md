@@ -5,9 +5,10 @@
 
 ## Features:
 * Easy To use.
-* error handling.
+* very portable.you can take it and use it in big projects.
 * very small.you can go and check how it works.
 * checking For Events strings(length less than 1 and spaces are not allowed ).
+* clear errors when they Occures.
 * browser friendly.
 
 ## Installation
