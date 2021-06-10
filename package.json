@@ -1,6 +1,6 @@
 {
   "name": "event_camel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple Event helper library for dealing with events in browser or any javascript enviroment",
   "main": "index.js",
   "scripts": {

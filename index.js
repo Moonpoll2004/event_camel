@@ -26,7 +26,7 @@ const EventCamel = function() {
     this.Emit = function (event,...args) {
         if(this.events.hasOwnProperty(event) === true){
             var callback = this.events[event]
-            callback(...args)
+            callback(event,...args)
         }else{
             var err = new Error("undefined event")
             console.error(err)
@@ -47,8 +47,9 @@ const EventCamel = function() {
     /**
      * 
      * @param {Array} events 
+     * @todo emit more than one event at once but you must declare it
+     * @todo does not support passing args (yet)
      */
-    //emit more than one event
     this.EmitMany = function (events) {
         if(typeof(events) == "object"){
             for (var i = 0; i < events.length; i++) {
@@ -58,6 +59,12 @@ const EventCamel = function() {
         }else{
             var err = new Error("TypeError: Typeof parameter 'events' must be valid array of strings")
             console.error(err)
+        }
+    }
+
+    this.EmitIf = function(event_name,condition,result=true,...args){
+        if(condition === result){
+            this.Emit(event_name,args)
         }
     }
 }

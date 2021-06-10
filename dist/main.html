@@ -70,11 +70,11 @@
 
 
         //setting main events "decremnt" and "increment"
-        camel.On("increment",function(payload){
+        camel.On("increment",function(event,payload){
             counter.innerText = parseInt(counter.innerText) + payload  
         })
 
-        camel.On("decrement",function(payload){
+        camel.On("decrement",function(event,payload){
             counter.innerText = parseInt(counter.innerText) - payload
         })
 
@@ -85,7 +85,7 @@
         })
 
         dec_btn.addEventListener("click",function(){
-            camel.Emit("decrement",1)
+            camel.EmitIf("decrement",parseInt(counter.innerText) > 0,true,1)
         })
     </script>
 </body>
